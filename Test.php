@@ -15,7 +15,7 @@ class Test {
 
     function start()
     {
-        echo "Good job! Start working now!";
+        echo "Good job! Start working now! hehehe";
     }
 }
 
