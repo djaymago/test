@@ -25,7 +25,7 @@ class DefaultController extends Controller
     public function contactAction()
     {
 
-        return $this->render('TestBundle:Default:index.html.twig');
+        return $this->render('TestBundle:Default:contact.html.twig');
     }
 
     public function signupAction()
