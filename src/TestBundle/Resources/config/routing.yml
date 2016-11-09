@@ -14,6 +14,6 @@ test_contact:
     path:     /contact
     defaults: { _controller: TestBundle:Default:contact }
 
-test_contact:
+test_signup:
     path:     /signup
     defaults: { _controller: TestBundle:Default:signup }
