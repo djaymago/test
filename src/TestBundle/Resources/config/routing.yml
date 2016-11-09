@@ -1,0 +1,19 @@
+test_homepage:
+    path:     /
+    defaults: { _controller: TestBundle:Default:index }
+
+test_about:
+    path:     /about
+    defaults: { _controller: TestBundle:Default:about }
+
+test_company:
+    path:     /company
+    defaults: { _controller: TestBundle:Default:company }
+
+test_contact:
+    path:     /contact
+    defaults: { _controller: TestBundle:Default:contact }
+
+test_contact:
+    path:     /signup
+    defaults: { _controller: TestBundle:Default:signup }
