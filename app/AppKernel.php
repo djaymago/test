@@ -2,7 +2,7 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Jay\TestBundle\TestBundle;
+use Jay\TestBundle;
 
 class AppKernel extends Kernel
 {
