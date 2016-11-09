@@ -2,7 +2,6 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Jay\TestBundle;
 
 class AppKernel extends Kernel
 {
@@ -18,7 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             //new Jay\TestBundle\TestBundle(),
-            new Test\TestBundle\TestTestBundle(),
+            //new Test\TestBundle\TestTestBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
