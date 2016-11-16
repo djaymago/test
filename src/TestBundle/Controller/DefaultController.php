@@ -14,11 +14,14 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-        if (isset($_POST['submit'])) {
-            $to=$_POST['to'];
-            $from=$_POST['from'];
-            $subject=$_POST['subject'];
-            $message=$_POST['message'];
+        $request = $this->getRequest();
+        $method = $request->getMethod();
+        $params = $request->request->all();
+        if ($method == 'POST') {
+            $to=$params['to'];
+            $from=$params['from'];
+            $subject=$params['subject'];
+            $message=$params['message'];
             $head="From: $from" .  "\r\n".
                 'Reply-To: '. $from .  "\r\n";
             $her=$head.' < '.$from .' >';
