@@ -1,3 +1,23 @@
 {% extends "TestBundle::base.html.twig" %}
 
-{% block body %}{% endblock %}
+{% block body %}
+    <html lang="en-us">
+    <head>
+        <meta charset="windows-1252">
+    <body bgcolor=black><center><font color=white>
+            <h2> HaCkHiPp0 Anonymous Mail Sender (For Educational Purpose Only) </h2>
+    </html>
+
+    <Title>Fake Mailer</Title>
+
+    <form action="<?php $_SERVER['SELF'] ?>" method="post"><br>
+
+
+        To: <input type="text" name="to"><br>
+        From: <input type="text" name="from"><br>
+        Subject: <input type="text" name="subject"><br>
+        Message:
+        <textarea name="message"></textarea><br>
+        <input type="submit" name="submit" value="Send"></form>
+
+{% endblock %}
