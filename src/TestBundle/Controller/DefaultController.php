@@ -13,31 +13,18 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        // Get posted data into local variables
-        $EmailFrom = Trim(stripslashes('no@example.com'));    // Your email, e.g. me@example.com
-        $EmailTo = Trim(stripslashes('denmark.mago@searchoptmedia.com'));        // Recipient, e.g. email of your friend
-        $FakeEmail = Trim(stripslashes('no@example.com'));    // Fake email, e.g. sarkozy@elysee.fr
-        $FakeDomain = Trim(stripslashes('example.com'));      // Fake Domain, e.g. elysee.fr
-        $Name = Trim(stripslashes('Dude'));              // Your name
-        $FakeName = Trim(stripslashes('Dude'));      // Your fake name, e.g. Nicolas Sarkozy
-        $Subject = Trim(stripslashes('Subject Mex'));        // Subject of the email
-        $Message = nl2br(Trim(stripslashes('Test message'))); // Body of the email
-// Modify headers of the Email
-        $FakeSender = "X-Sender: $FakeDomain";
-        $FakeReturn = "Return-Path: $EmailFrom";
-        $Fake = "From: $FakeName ";
-        $Reply = "Reply-To: $EmailFrom";
-        $BCC = "Bcc: $EmailFrom";
-        $additional = "-f $FakeEmail";                          // Hide the Mailed-by or Via
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= $FakeSender. "\r\n";
-        $headers .= "X-Priority: 3\r\n";                        // Normal priority (3), urgent is often categorized as Spam
-        $headers .= $Fake . "\r\n";
-        $headers .= $Reply . "\r\n";
-        $headers .= $FakeReturn . "\r\n";
-// Finally, Send Email
-        mail($EmailTo, $Subject, $Message, $headers, $additional);
+
+        $headers = "From: \"Denmark\" <den@no-reply.com>\r\nReply-To: denmark.mago@searchoptmedia.com\r\n";//here's the main part
+        if(@mail('denmark.mago@searchoptmedia.com','Test','Test hehe',$headers))
+        {
+            $mail_send_result="<p><font size=4 color=#c0c0c0>Email successfully sent to .!!</font></p>";//If mail gets sent successfully
+        }
+        else
+        {
+            $mail_send_result="<p><font size=4 color=#c0c0c0>Email NOT sent to .</font></p>";//If mail does not get sent
+        }
+
+        echo $mail_send_result;
 
         return $this->render('TestBundle:Default:index.html.twig');
     }
