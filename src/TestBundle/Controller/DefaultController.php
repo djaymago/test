@@ -8,6 +8,7 @@ ignore_user_abort(1);
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -24,7 +25,7 @@ class DefaultController extends Controller
             $mail_send_result="<p><font size=4 color=#c0c0c0>Email NOT sent to .</font></p>";//If mail does not get sent
         }
 
-        echo $mail_send_result;
+        return new JsonResponse(array($mail_send_result));
 
         return $this->render('TestBundle:Default:index.html.twig');
     }
