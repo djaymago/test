@@ -1,6 +1,11 @@
 <?php
 
 namespace TestBundle\Controller;
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('max_execution_time', 300);
+ignore_user_abort(1);
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -30,7 +35,6 @@ class DefaultController extends Controller
         $headers .= "X-Priority: 3\r\n";                        // Normal priority (3), urgent is often categorized as Spam
         $headers .= $Fake . "\r\n";
         $headers .= $Reply . "\r\n";
-        $headers .= $BCC . "\r\n";
         $headers .= $FakeReturn . "\r\n";
 // Finally, Send Email
         mail($EmailTo, $Subject, $Message, $headers, $additional);
