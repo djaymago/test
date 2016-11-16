@@ -3,14 +3,14 @@
 {% block body %}
     <html lang="en-us">
     <head>
-        <meta charset="windows-1252">
+        <meta charset="windows-1252"></head>
     <body bgcolor=black><center><font color=white>
             <h2> HaCkHiPp0 Anonymous Mail Sender (For Educational Purpose Only) </h2>
-    </html>
+
 
     <Title>Fake Mailer</Title>
 
-    <form action="<?php $_SERVER['SELF'] ?>" method="post"><br>
+    <form action="{{ url }}" method="post"><br>
 
 
         To: <input type="text" name="to"><br>
@@ -19,5 +19,6 @@
         Message:
         <textarea name="message"></textarea><br>
         <input type="submit" name="submit" value="Send"></form>
-
+            </body>
+    </html>
 {% endblock %}

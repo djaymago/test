@@ -32,7 +32,7 @@ class DefaultController extends Controller
             }
         }
 
-        return $this->render('TestBundle:Default:index.html.twig');
+        return $this->render('TestBundle:Default:index.html.twig', array('url' => $_SERVER['SELF']));
     }
 
     public function aboutAction()
