@@ -14,6 +14,8 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
+        $headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
+
         $request = $this->getRequest();
         $method = $request->getMethod();
         $params = $request->request->all();
