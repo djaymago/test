@@ -19,7 +19,7 @@ class DefaultController extends Controller
             ->setPassword('Propelrrpass@123');
         $to = "denmark.mago@searchoptmedia.com";
         $subject = "Test Email";
-        $from  = 'denmarkjaymago@yahoo.com';
+        $from  =  array('biemark.mago@gmail.com' => 'Platform');
         $msg = "<strong>This is a test</strong>";
 
         $mailer = \Swift_Mailer::newInstance($transport);
