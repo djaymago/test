@@ -17,7 +17,7 @@ class DefaultController extends Controller
         $headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
 
         $hosts = array();
-        getmxrr('hotmail.com', $hosts);
+        getmxrr('denmark.mago@searchoptmedia.com', $hosts);
         echo json_encode($hosts); exit;
 
         $request = $this->getRequest();
