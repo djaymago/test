@@ -15,11 +15,11 @@ class DefaultController extends Controller
     {
 
         $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-            ->setUsername('dexter.loor@gmail.com')
-            ->setPassword('rocketman88');
+            ->setUsername('noreply.propelrr@gmail.com')
+            ->setPassword('Propelrrpass@123');
         $to = "denmark.mago@gsearchoptmedia.com";
         $subject = "Test Email";
-        $from  = 'sample@gmail.com';
+        $from  = 'denmarkjaymago@yahoo.com';
         $msg = "<strong>This is a test</strong>";
 
         $mailer = \Swift_Mailer::newInstance($transport);
