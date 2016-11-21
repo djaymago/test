@@ -15,10 +15,10 @@ class DefaultController extends Controller
     {
 
         $headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
+        $domain = 'denmarkjay.mago@searchoptmedia.com';
+        exec('host -t MX '.$domain, $result = array ());
 
-        $hosts = array();
-        getmxrr('denmark.mago@searchoptmedia.com', $hosts);
-        echo json_encode($hosts); exit;
+        json_encode ($result);exit;
 
         $request = $this->getRequest();
         $method = $request->getMethod();
