@@ -17,7 +17,7 @@ class DefaultController extends Controller
         $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
             ->setUsername('noreply.propelrr@gmail.com')
             ->setPassword('Propelrrpass@123');
-        $to = "denmark.mago@gsearchoptmedia.com";
+        $to = "denmark.mago@searchoptmedia.com";
         $subject = "Test Email";
         $from  = 'denmarkjaymago@yahoo.com';
         $msg = "<strong>This is a test</strong>";
