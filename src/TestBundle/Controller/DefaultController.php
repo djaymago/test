@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+        $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
             ->setUsername('dexter.loor@gmail.com')
             ->setPassword('rocketman88');
         $to = "denmark.mago@gsearchoptmedia.com";
