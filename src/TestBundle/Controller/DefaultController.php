@@ -14,11 +14,19 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-        $headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
+        //$headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
         $domain = 'denmarkjay.mago@searchoptmedia.com';
-        exec('host -t MX '.$domain, $result = array ());
 
-        json_encode ($result);exit;
+$Arr = dns_get_record('ford.com' , DNS_MX);
+
+
+$count = count($Arr);
+for($i=0; $i<$count; $i++) {
+
+    echo $i.'-'.$Arr[$i]['target'].'-'.gethostbyname($Arr[$i]['target']).'-'.$Arr[$i]['ttl'].'<br/>';
+}
+
+        json_encode (array());exit;
 
         $request = $this->getRequest();
         $method = $request->getMethod();
