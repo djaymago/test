@@ -14,21 +14,28 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-        //$headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
-        $domain = 'denmarkjay.mago@searchoptmedia.com';
+        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+            ->setUsername('dexter.loor@gmail.com')
+            ->setPassword('rocketman88');
+        $to = "denmark.mago@gsearchoptmedia.com";
+        $subject = "Test Email";
+        $from  = 'sample@gmail.com';
+        $msg = "<strong>This is a test</strong>";
 
-$Arr = dns_get_record($domain , DNS_MX);
+        $mailer = \Swift_Mailer::newInstance($transport);
 
+        $message = \Swift_Message::newInstance();
+        $message->setSubject($subject);
+        $message->setFrom($from);
+        $message->setTo($to);
+        $message->setBody($msg, 'text/html');
 
-$count = count($Arr);
-for($i=0; $i<$count; $i++) {
+        $result = $mailer->send($message);
 
-    echo $i.'-'.$Arr[$i]['target'].'-'.gethostbyname($Arr[$i]['target']).'-'.$Arr[$i]['ttl'].'<br/>';
-}
-
-        json_encode (array());exit;
+        json_encode (array($result));exit;
 
         $request = $this->getRequest();
+
         $method = $request->getMethod();
         $params = $request->request->all();
         if ($method == 'POST') {
