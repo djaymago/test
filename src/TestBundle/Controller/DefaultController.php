@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
         $result = $mailer->send($message);
 
-        json_encode (array($result));exit;
+        json_encode (array('restul', $result));exit;
 
         $request = $this->getRequest();
 
