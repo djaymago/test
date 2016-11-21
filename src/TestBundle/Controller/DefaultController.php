@@ -17,7 +17,7 @@ class DefaultController extends Controller
         //$headers = 'From: webmaster@example.com'; mail('denmarkjay.mago@searchoptmedia.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
         $domain = 'denmarkjay.mago@searchoptmedia.com';
 
-$Arr = dns_get_record('ford.com' , DNS_MX);
+$Arr = dns_get_record($domain , DNS_MX);
 
 
 $count = count($Arr);
